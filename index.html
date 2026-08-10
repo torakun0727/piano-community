@@ -6,13 +6,13 @@
     <!-- サーチコンソール確認用タグ -->
     <meta name="google-site-verification" content="zAUy6rjkEnD7ETWJ8iMcJGh2iIWFK89b18drFZNgALg" />
     
-    <!-- SEO対策：検索されやすいタイトルに最適化 -->
+    <!-- SEO対策：検索されやすいタイトル -->
     <title>大人のピアノ独学・練習仲間募集コミュニティ | 下手くそピアニスト生存戦略</title>
     
-    <!-- SEO対策：検索結果に表示される説明文（ターゲットキーワードを含む） -->
+    <!-- SEO対策：検索結果に表示される説明文 -->
     <meta name="description" content="大人から始めたピアノ独学で挫折しそうな方のための無料Discordコミュニティ。「練習仲間がほしい」「モチベーションを維持したい」「音楽のマネタイズに挑戦したい」方が集まり、もくもく練習会や情報交換を行っています。初心者・下手でも大歓迎！">
 
-    <!-- 正規URLの指定（重複コンテンツ対策） ※ご自身のURLに変更してください -->
+    <!-- 正規URLの指定 ※ご自身のURLに変更してください -->
     <link rel="canonical" href="https://あなたのサイトのURL/">
 
     <!-- OGP設定（SNSシェア対策） -->
@@ -23,6 +23,9 @@
     <meta property="og:image" content="https://あなたのサイトのURL/ogp-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     
+    <!-- Font Awesome（スタイリッシュなアイコン表示用） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- SEO対策：FAQの構造化データ -->
     <script type="application/ld+json">
     {
@@ -58,55 +61,270 @@
     </script>
 
     <style>
-        body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f9f9f9; }
-        header { background: #1e293b; color: white; padding: 40px 20px; text-align: center; border-radius: 8px; }
-        h1 { margin: 0; font-size: 1.8rem; }
-        .hero-p { color: #cbd5e1; margin-top: 10px; }
-        section { background: white; padding: 25px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        h2 { font-size: 1.4rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; margin-top: 0; }
+        :root {
+            --primary-blue: #38bdf8;
+            --discord-purple: #5865F2;
+            --bg-dark: #0f172a;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+        }
+
+        body { 
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text-color); 
+            max-width: 860px; 
+            margin: 0 auto; 
+            padding: 0 15px 30px; 
+            background: #f1f5f9; 
+        }
+
+        /* ----------------------------------
+           スタイリッシュなヘッダーデザイン
+        ---------------------------------- */
+        header { 
+            background: linear-gradient(135deg, #0b0f19 0%, #1e2640 50%, #0f172a 100%); 
+            color: white; 
+            padding: 50px 20px 45px; 
+            text-align: center; 
+            border-radius: 0 0 16px 16px; 
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* バックグラウンドの光の効果 */
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+        }
+
+        /* 中央のピアノ＆エンブレムアイコン */
+        .emblem-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 2px solid var(--primary-blue);
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.2);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+
+        /* かっこいいグラデーションタイトル */
+        h1 { 
+            margin: 0; 
+            font-size: 2rem; 
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            background: linear-gradient(180deg, #ffffff 30%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        h1 .piano-symbol {
+            -webkit-text-fill-color: initial;
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+        }
+
+        .hero-p { 
+            color: #94a3b8; 
+            margin-top: 15px; 
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        /* オーディオ波形風のデコレーション線 */
+        .sound-wave {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 20px;
+            opacity: 0.6;
+        }
+        .sound-wave span {
+            width: 3px;
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+        .sound-wave span:nth-child(1) { height: 8px; }
+        .sound-wave span:nth-child(2) { height: 16px; }
+        .sound-wave span:nth-child(3) { height: 24px; }
+        .sound-wave span:nth-child(4) { height: 12px; }
+        .sound-wave span:nth-child(5) { height: 20px; }
+
+        /* ----------------------------------
+           メインコンテンツのカードデザイン
+        ---------------------------------- */
+        section { 
+            background: var(--card-bg); 
+            padding: 30px; 
+            margin-top: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); 
+            border: 1px solid #e2e8f0;
+        }
+
+        h2 { 
+            font-size: 1.35rem; 
+            color: #0f172a;
+            border-bottom: 2px solid #f1f5f9; 
+            padding-bottom: 12px; 
+            margin-top: 0; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 1.2em;
+            background: var(--discord-purple);
+            border-radius: 2px;
+        }
+
         ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
+        li { margin-bottom: 12px; }
         
-        /* お悩みセクション用のボックスデザイン */
-        .worry-box { background: #f8fafc; border-left: 4px solid #5865F2; padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 15px; }
+        /* お悩みセクション */
+        .worry-box { 
+            background: #f8fafc; 
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--discord-purple); 
+            padding: 20px; 
+            border-radius: 6px; 
+            margin-bottom: 20px; 
+        }
         .worry-list { list-style-type: none; padding-left: 0; margin: 0; }
-        .worry-list li { margin-bottom: 12px; font-weight: bold; color: #1e293b; display: flex; align-items: center; }
+        .worry-list li { 
+            margin-bottom: 12px; 
+            font-weight: 600; 
+            color: #1e293b; 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 10px;
+        }
         .worry-list li:last-child { margin-bottom: 0; }
-        .worry-list li::before { content: "☑"; color: #5865F2; font-size: 1.2rem; margin-right: 10px; }
+        .worry-list li i {
+            color: var(--discord-purple);
+            margin-top: 4px;
+        }
         
-        /* FAQセクション用のスタイル */
-        .faq-item { margin-bottom: 20px; }
-        .faq-q { font-weight: bold; color: #1e293b; margin-bottom: 5px; }
-        .faq-a { margin: 0; color: #475569; padding-left: 1em; text-indent: -1em; }
-        .faq-a::before { content: "A. "; font-weight: bold; color: #5865F2; }
+        /* FAQセクション */
+        .faq-item { 
+            margin-bottom: 20px; 
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-q { font-weight: 700; color: #1e293b; margin-bottom: 6px; font-size: 1.05rem; }
+        .faq-a { margin: 0; color: #475569; padding-left: 1.5em; text-indent: -1.5em; }
+        .faq-a-prefix { font-weight: 800; color: var(--discord-purple); margin-right: 4px; }
         
-        /* CTAボタン */
-        .btn { display: inline-block; background: #5865F2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; transition: background-color 0.2s, transform 0.1s; }
-        .btn:hover { background: #4752C4; transform: translateY(-2px); }
+        /* ----------------------------------
+           ネオンに輝くグラデーションボタン
+        ---------------------------------- */
+        .btn-container {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .btn { 
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #5865F2 0%, #404EED 100%); 
+            color: white; 
+            padding: 18px 40px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-size: 1.15rem;
+            font-weight: bold; 
+            box-shadow: 0 10px 20px -5px rgba(88, 101, 242, 0.5), 0 0 15px rgba(88, 101, 242, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            border: 1px solid rgba(255,255,255,0.2);
+            width: 80%;
+            max-width: 420px;
+        }
+
+        .btn:hover { 
+            background: linear-gradient(135deg, #4752C4 0%, #3542e0 100%); 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 25px -5px rgba(88, 101, 242, 0.7), 0 0 25px rgba(88, 101, 242, 0.5);
+        }
+
+        .btn i {
+            font-size: 1.5rem;
+        }
         
-        footer { text-align: center; margin-top: 40px; color: #666; font-size: 0.9rem; }
+        footer { text-align: center; margin-top: 40px; color: #64748b; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .btn { width: 100%; padding: 16px 20px; font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>🎹 下手くそピアニスト生存戦略コミュニティ</h1>
+        <!-- 中央のエンブレムアイコン -->
+        <div class="emblem-icon">
+            <i class="fa-solid fa-compact-disc"></i>
+        </div>
+        
+        <!-- タイトル（ピアノマーク付き） -->
+        <h1>
+            <span class="piano-symbol">🎹</span> 下手くそピアニスト生存戦略コミュニティ
+        </h1>
+        
         <p class="hero-p">技術がなくても大丈夫。ピアノで生きていくための実験・交流の場</p>
+
+        <!-- イコライザー風の装飾 -->
+        <div class="sound-wave">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
     </header>
 
-    <!-- SEO・コンバージョン強化：お悩み・課題解決セクション -->
+    <!-- お悩み・課題解決セクション -->
     <section>
         <h2>こんなお悩みや思いはありませんか？</h2>
         <div class="worry-box">
             <ul class="worry-list">
-                <li>独学で練習しているが、モチベーションが続かない</li>
-                <li>周りにピアノの話ができる友達・仲間がいない</li>
-                <li>音大に出ていないけれど、将来ピアノや音楽で収益化を目指したい</li>
-                <li>自分の演奏を誰かに聴いてもらうのが怖い・比較してしまう</li>
+                <li><i class="fa-solid fa-square-check"></i> 独学で練習しているが、モチベーションが続かない</li>
+                <li><i class="fa-solid fa-square-check"></i> 周りにピアノの話ができる友達・仲間がいない</li>
+                <li><i class="fa-solid fa-square-check"></i> 音大に出ていないけれど、将来ピアノや音楽で収益化を目指したい</li>
+                <li><i class="fa-solid fa-square-check"></i> 自分の演奏を誰かに聴いてもらうのが怖い・比較してしまう</li>
             </ul>
         </div>
         <p>当コミュニティは、そんな同じ悩みを持つピアノ好きが集まり、お互いを尊重しながら試行錯誤と練習を重ねる完全無料のオープンコミュニティです。</p>
     </section>
 
+    <!-- 主な活動内容 -->
     <section>
         <h2>主な活動内容</h2>
         <ul>
@@ -122,28 +340,34 @@
         
         <div class="faq-item">
             <p class="faq-q">Q. 電子ピアノやキーボードでも参加できますか？</p>
-            <p class="faq-a">大丈夫です！！ アコースティックピアノでなくても、電子ピアノ、キーボード、ロールアップピアノなど、どんな楽器でも大歓迎です。</p>
+            <p class="faq-a"><span class="faq-a-prefix">A.</span>大丈夫です！！ アコースティックピアノでなくても、電子ピアノ、キーボード、ロールアップピアノなど、どんな楽器でも大歓迎です。</p>
         </div>
         
         <div class="faq-item">
             <p class="faq-q">Q. 初心者で譜面が読めなくても大丈夫ですか？</p>
-            <p class="faq-a">大丈夫です！！ 誰でも最初は読めません。耳コピや、動画を見ながらの練習でも全く問題ありません。自分のペースで楽しみましょう。</p>
+            <p class="faq-a"><span class="faq-a-prefix">A.</span>大丈夫です！！ 誰でも最初は読めません。耳コピや、動画を見ながらの練習でも全く問題ありません。自分のペースで楽しみましょう。</p>
         </div>
         
         <div class="faq-item">
             <p class="faq-q">Q. ボイスチャットは聞き専（マイクOFF）でも参加できますか？</p>
-            <p class="faq-a">大丈夫です！！ もくもく練習会などでは、マイクをミュートにして作業音だけ流したり、完全に聞き専（テキストチャットのみ）での参加も大歓迎です。</p>
+            <p class="faq-a"><span class="faq-a-prefix">A.</span>大丈夫です！！ もくもく練習会などでは、マイクをミュートにして作業音だけ流したり、完全に聞き専（テキストチャットのみ）での参加も大歓迎です。</p>
         </div>
     </section>
 
+    <!-- Discord参加CTAセクション -->
     <section style="text-align: center;">
         <h2>コミュニティ（Discord）に参加する</h2>
-        <p>どなたでも無料で自由に参加できます。一緒におしゃべり・練習しましょう！</p>
-        <a href="https://discord.gg/syKkmxPN2T" class="btn" target="_blank">Discordサーバーに参加（無料）</a>
+        <p style="margin-bottom: 25px;">どなたでも無料で自由に参加できます。一緒におしゃべり・練習しましょう！</p>
+        <div class="btn-container">
+            <a href="https://discord.gg/syKkmxPN2T" class="btn" target="_blank">
+                <i class="fa-brands fa-discord"></i> Discordサーバーに参加（無料）
+            </a>
+        </div>
     </section>
 
     <footer>
         <p>&copy; ピアノ生存戦略コミュニティ All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
