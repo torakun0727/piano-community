@@ -21,8 +21,7 @@
     <meta property="og:title" content="大人のピアノ独学・練習仲間募集コミュニティ | 下手くそピアニスト生存戦略">
     <meta property="og:description" content="技術がなくてもピアノで生きていく道を探すオンラインコミュニティ。下手でもOK！無料Discordサーバーです。">
     <meta property="og:type" content="website">
-    <!-- ※SNSシェア画像としても使う場合は下行のコメントアウトを解除してください -->
-    <!-- <meta property="og:image" content="favicon.png"> -->
+    <meta property="og:image" content="favicon.png">
     <meta name="twitter:card" content="summary_large_image">
     
     <!-- Font Awesome（スタイリッシュなアイコン表示用） -->
@@ -109,20 +108,27 @@
             pointer-events: none;
         }
 
-        /* 中央のピアノ＆エンブレムアイコン */
+        /* 中央のピアノエンブレム（画像をきれいに表示） */
         .emblem-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+            width: 75px;
+            height: 75px;
+            background: #0f172a;
             border: 2px solid var(--primary-blue);
-            border-radius: 18px;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
             margin-bottom: 20px;
-            font-size: 2rem;
-            color: var(--primary-blue);
+            overflow: hidden;
+            padding: 2px;
+        }
+
+        .emblem-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
         }
 
         /* かっこいいグラデーションタイトル */
@@ -294,9 +300,9 @@
 <body>
 
     <header>
-        <!-- 中央のエンブレムアイコン -->
+        <!-- 中央のエンブレムアイコン（新画像を設定） -->
         <div class="emblem-icon">
-            <i class="fa-solid fa-compact-disc"></i>
+            <img src="favicon.png" alt="ピアノコミュニティロゴ">
         </div>
         
         <!-- タイトル（ピアノマーク付き） -->
